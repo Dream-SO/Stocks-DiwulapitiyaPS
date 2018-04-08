@@ -4,15 +4,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var expressHbs = require('express-handlebars');
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/stockdb');
-var db = mongoose.connection;
 
 var mysql = require('mysql') //sql connection
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var sectionsRouter = require('./routes/sections');
+var subSectionsRouter = require('./routes/subSections');
 
 var app = express();
 
@@ -29,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/sections',sectionsRouter);
+app.use('/subSections',subSectionsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

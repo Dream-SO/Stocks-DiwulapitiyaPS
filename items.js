@@ -42,7 +42,7 @@ db.query("SELECT * FROM batch",
     }
 });
 
-router.get('/',function (req,res,next) {
+router.get('/items',function (req,res,next) {
     res.render('items/batchs',{
         items:items
     });
