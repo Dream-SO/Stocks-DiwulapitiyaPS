@@ -13,6 +13,11 @@
     "hbs": "~4.0.1",
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
+<<<<<<< HEAD
     "mysql": "^2.15.0"
+=======
+    "mongodb": "*",
+    "mongoose": "*"
+>>>>>>> e23bbfd9abefb3f6d0c8fffac6a9ccb927d6d9f5
   }
 }
