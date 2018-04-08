@@ -1,14 +1,15 @@
-﻿/* Navbar ====================================== */
-@import url(materialize.css);
+﻿
+
 @font-face {
-    font-family: "amaleesinhala";    src: url("css/amaleesinhala.woff");
-    src:
-            url("css/amaleesinhala.woff") format("woff"),
-            url("css/fonts/Harabara.otf") format("opentype"),
-            url("css/fonts/Harabara.svg#filename") format("svg");
+  font-family: fm_malithi;
+  src: url(fm_malithi.woff);
+}
+* {
+
 }
 
-
+/* Navbar ====================================== */
+@import url(materialize.css);
 
 .navbar {
   font-family: "Roboto", sans-serif;
