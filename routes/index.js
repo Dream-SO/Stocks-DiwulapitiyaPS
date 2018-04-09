@@ -6,7 +6,7 @@ var connection = require('../connection');
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-    connection.query('SELECT * FROM section', function (err, rows) {
+    connection.query('SELECT * FROM section WHERE is_deleted=0', function (err, rows) {
         if (err){
             throw err;
         }else {
