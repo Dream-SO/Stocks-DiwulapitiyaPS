@@ -11,6 +11,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var sectionsRouter = require('./routes/sections');
 var subSectionsRouter = require('./routes/subSections');
+var getItemsStats = require('./routes/getItemsStats');
 
 var app = express();
 
@@ -28,6 +29,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/sections',sectionsRouter);
 app.use('/subSections',subSectionsRouter);
+app.use('/getItemsStats',getItemsStats);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
