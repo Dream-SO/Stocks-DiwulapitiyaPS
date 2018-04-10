@@ -2,23 +2,71 @@ var express = require('express');
 var router = express.Router();
 var connection = require('../connection');
 
-/* GET subSections page. */
-router.get('/:section_name/:section_id', function(req, res, next) {
-    connection.query("SELECT section.section_name , subsection.subSection_name , section_subsection.subSection_id" +
-        " FROM section , subsection , section_subsection WHERE section_subsection.section_id ='"+req.params.section_id+
-        "' AND section.section_id = section_subsection.section_id " +
-        "AND section_subsection.subSection_id = subsection.subSection_id ", function (err, rows) {
-        if (err){
-            throw err;
-        }else {
-            console.log(rows)
-            res.render('subSections', {subSections:rows , sectionnName:req.params.section_name});
-        }
-    });
+
+
+// router.get('/addSubsection/:section_id',function (req,res,next) {
+//
+//     if(req.params.section_id){
+//         connection.query("SELECT MAX(subSection_id) as subSection_id FROM subsection  WHERE subSection_id LIKE '" + req.params.section_id + "%' ;", function (err, row) {
+//             if (err){
+//                 throw err;
+//             }else {
+//                 console.log(row);
+//
+//                 if(row[0].subSection_id){
+//                     var current_subSection = row[0].subSection_id;
+//                     var ascii = current_subSection.charCodeAt(1);
+//                     var new_second_letter = String.fromCharCode(ascii+1);
+//                     var new_subsection_id = current_subSection.charAt(0)+new_second_letter;
+//                     console.log(new_subsection_id);
+//                     res.render('newSubsection', {subSection_id:new_subsection_id});
+//                 }else{
+//                     console.log("No subsections");
+//                     var section_id = req.params.section_id;
+//                     var start_second_letter = 'A';
+//                     var new_subsection_id = section_id+start_second_letter;
+//                     console.log(new_subsection_id);
+//                     res.render('newSubsection', {subSection_id:new_subsection_id});
+//                 }
+//             }
+//         });
+//     }else{
+//         res.render('/');
+//     }
+//
+// });
+
+router.get('/addSubsection/:section_id',function (req,res,next) {
+
+    if(req.params.section_id){
+        connection.query("SELECT MAX(subSection_id) as subSection_id FROM subsection  WHERE subSection_id LIKE '" + req.params.section_id + "%' ; SELECT * FROM subSection WHERE subSection_id LIKE '" + req.params.section_id + "%'",[1,2], function (err, row) {
+            if (err){
+                throw err;
+            }else {
+                console.log(row);
+
+                if(row[0][0].subSection_id){
+                    var current_subSection = row[0][0].subSection_id;
+                    var ascii = current_subSection.charCodeAt(1);
+                    var new_second_letter = String.fromCharCode(ascii+1);
+                    var new_subsection_id = current_subSection.charAt(0)+new_second_letter;
+                    console.log(new_subsection_id);
+                    res.render('newSubsection', {subSection_id:new_subsection_id , subSections:row[1]});
+                }else{
+                    console.log("No subsections");
+                    var section_id = req.params.section_id;
+                    var start_second_letter = 'A';
+                    var new_subsection_id = section_id+start_second_letter;
+                    console.log(new_subsection_id);
+                    res.render('newSubsection', {subSection_id:new_subsection_id});
+                }
+            }
+        });
+    }else{
+        res.render('/');
+    }
 
 });
-
-
 
 
 

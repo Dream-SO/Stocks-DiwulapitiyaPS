@@ -7,9 +7,9 @@
             </h1>
             <hr>
             <div class="icon-and-text-button-demo">
-                <button type="button" class="btn btn-success waves-effect" onclick="location.href = '/sections/addSection';">
-                    <i class="material-icons">home</i>
-                    <span>Add New Section</span>
+                <button type="button" class="btn btn-success waves-effect btn-lg" onclick="location.href = '/sections/addSection';">
+                    <!--<i class="material-icons">home</i>-->
+                    <span>නව අංශයක් එකතු කිරීමට </span>
                 </button>
             </div>
         </div>
@@ -18,7 +18,7 @@
             {{#each sections}}
 
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <a href="subSections/{{this.section_name}}/{{this.section_id}}">
+                        <a href="sections/{{this.section_name}}/{{this.section_id}}">
                             <div class="info-box-4 hover-expand-effect">
                                 <div class="icon">
 

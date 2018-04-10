@@ -1,6 +1,7 @@
 var conncetion = require('../connection');
 
 var row;
+
 function getAll(){
     conncetion.query('SELECT * FROM section', function (err, rows) {
         if (err) {
@@ -13,5 +14,6 @@ function getAll(){
     })
 
 }
+
 
 module.exports = getAll();
