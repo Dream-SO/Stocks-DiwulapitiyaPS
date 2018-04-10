@@ -5,7 +5,8 @@ var settings = {
     host     : 'localhost',
     user     : 'root',
     password : '',
-    database : 'stock_diwulapitiya_ps'
+    database : 'stock_diwulapitiya_ps',
+    multipleStatements: true
     };
 
 function connectDatabase() {

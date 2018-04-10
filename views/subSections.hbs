@@ -1,8 +1,23 @@
 <section class="content">
     <div class="container-fluid">
-        <div class="block-header">
-            <h2><b>{{sectionnName}} - උප අංශ</b></h2>
+
+        <div class="body">
+            <ol class="breadcrumb breadcrumb-col-pink align-right">
+                <li><a href="/"><i class="material-icons">home</i>ප්‍රධාන මෙනුව - අංශයන්</a></li>
+                <li class="active"><i class="material-icons">library_books</i>{{sectionnName}} - උප අංශ </li>
+            </ol>
         </div>
+        <div class="block-header">
+            <h3><b>{{sectionnName}} - උප අංශ</b></h3>
+        </div>
+        <hr>
+        <div class="icon-and-text-button-demo">
+            <button type="button" class="btn btn-success btn-lg waves-effect" onclick="location.href = '/subSections/addSubsection/{{sectionId}}';">
+                <!--<i class="material-icons">home</i>-->
+                <span>නව උප අංශයක් එකතු කිරීමට </span>
+            </button>
+        </div>
+        <br>
         <!-- Basic Example -->
         <div class="row clearfix">
             {{#each subSections}}
