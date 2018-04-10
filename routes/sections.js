@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var connection = require('../connection');
+var moment = require('moment');
 
 var Section = require('../models/section');
 
@@ -65,11 +66,14 @@ router.post('/addSection', function(req, res) {
     var sectionId = req.body.sectionId;
     var sectionName = req.body.sectionName;
 
+    var created_at = moment(Date.now()).format('YYYY-MM-DD HH:mm:ss');
+
+
     console.log(sectionName);
     console.log(sectionId);
 
     // var sql = "INSERT INTO section (section_id, section_name) VALUES (sectionId, sectionName);"
-    connection.query("INSERT INTO section (section_id, section_name,created_at) VALUES ('" + sectionId + "','" + sectionName + "','" +Date()+ "');", function (err, result) {
+    connection.query("INSERT INTO section (section_id, section_name,created_at) VALUES ('" + sectionId + "','" + sectionName + "','" +created_at+ "');", function (err, result) {
         if (err) throw err;
         console.log("1 record inserted");
     });
