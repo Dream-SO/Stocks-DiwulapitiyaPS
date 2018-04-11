@@ -4,9 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var expressHbs = require('express-handlebars');
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/stockdb');
-var db = mongoose.connection;
+
+var mysql = require('mysql') //sql connection
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -14,6 +13,7 @@ var usersRouter = require('./routes/users');
 var itemsRouter = require('./routes/items');
 
 var sectionsRouter = require('./routes/sections');
+var subSectionsRouter = require('./routes/subSections');
 
 
 /*
@@ -56,6 +56,7 @@ app.use('/users', usersRouter);
 
 app.use('/items', itemsRouter);
 app.use('/sections',sectionsRouter);
+app.use('/subSections',subSectionsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -73,11 +74,11 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+<<<<<<< HEAD
 // Set Port
 app.set('port', (process.env.PORT || 4000));
+=======
+>>>>>>> master
 
-app.listen(app.get('port'), function(){
-    console.log('Server started on port '+app.get('port'));
-});
 
 module.exports = app;
