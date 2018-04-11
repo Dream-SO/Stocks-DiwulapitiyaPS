@@ -76,11 +76,10 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-<<<<<<< HEAD
+
 // Set Port
 app.set('port', (process.env.PORT || 4000));
-=======
->>>>>>> master
+
 
 
 module.exports = app;
