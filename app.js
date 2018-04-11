@@ -14,6 +14,7 @@ var itemsRouter = require('./routes/items');
 
 var sectionsRouter = require('./routes/sections');
 var subSectionsRouter = require('./routes/subSections');
+var getItemsStats = require('./routes/getItemsStats');
 
 
 /*
@@ -57,6 +58,7 @@ app.use('/users', usersRouter);
 app.use('/items', itemsRouter);
 app.use('/sections',sectionsRouter);
 app.use('/subSections',subSectionsRouter);
+app.use('/getItemsStats',getItemsStats);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

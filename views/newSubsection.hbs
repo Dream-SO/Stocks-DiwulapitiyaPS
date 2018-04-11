@@ -1,0 +1,96 @@
+<section class="content">
+    <div class="container-fluid">
+
+
+        <div class="body">
+            <ol class="breadcrumb breadcrumb-col-pink align-right">
+                <li><a href="/"><i class="material-icons">home</i> ප්‍රධාන මෙනුව - අංශයන්</a></li>
+                <li class="active"><i class="material-icons">library_books</i> New SubSection</li>
+            </ol>
+        </div>
+
+
+        <!-- Vertical Layout -->
+        <div class="row clearfix">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            නව උප අංශයක් එකතු කිරීමෙ පෝරමය
+                        </h2>
+                        <ul class="header-dropdown m-r--5">
+                            <li class="dropdown">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="material-icons">more_vert</i>
+                                </a>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="javascript:void(0);">Action</a></li>
+                                    <li><a href="javascript:void(0);">Another action</a></li>
+                                    <li><a href="javascript:void(0);">Something else here</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="body">
+                        <form method="POST" action="/subSections/addSubsection">
+                            <label for="subSectionId">නව උප අංශයේ කේතය </label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <!--<input type="text" name="sectionId" id="sectionId" class="form-control" >-->
+                                    <input type="text" name="subSectionId" id="subSectionId" class="form-control" value="{{subSection_id}}" required readonly>
+                                </div>
+                            </div>
+                            <label for="subSectionName">නව උප අංශයේ නම </label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" id="subSectionName" name="subSectionName" class="form-control" placeholder="" required>
+                                </div>
+                            </div>
+                            <label for="accountingCateg">ගිණුම්කරණ අංශයන් </label>
+                            <div class="form-group demo-tagsinput-area" >
+                                <div class="form-line">
+                                    <input type="text" name="accountingCateg" class="form-control" data-role="tagsinput" value="" disabled>
+                                </div>
+                            </div>
+
+
+                            <br>
+
+                            <button type="reset" class="btn btn-primary m-t-15 waves-effect btn-lg">RESET</button>
+                            <button type="submit" class="btn btn-success m-t-15 waves-effect btn-lg">SAVE</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            දැනට පවතින උප අංශයන්
+                        </h2>
+                        <ul class="header-dropdown m-r--5">
+                            <li class="dropdown">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="material-icons">more_vert</i>
+                                </a>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="javascript:void(0);">Action</a></li>
+                                    <li><a href="javascript:void(0);">Another action</a></li>
+                                    <li><a href="javascript:void(0);">Something else here</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="body">
+                        <div class="list-group">
+                            {{#each subSections}}
+                                <button type="button" onclick="location.href = '#'" class="list-group-item">{{this.subSection_id}} &nbsp;&nbsp;  {{this.subSection_name}}</button>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- #END# Vertical Layout -->
+    </div>
+</section>

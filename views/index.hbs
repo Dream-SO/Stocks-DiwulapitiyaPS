@@ -4,165 +4,34 @@
         <div class="block-header">
             <h1>
                 අංශයන්
-
             </h1>
             <hr>
             <div class="icon-and-text-button-demo">
-                <button type="button" class="btn btn-success waves-effect" onclick="location.href = '/sections/addSection';">
-                    <i class="material-icons">home</i>
-                    <span>Add New Section</span>
+                <button type="button" class="btn btn-success waves-effect btn-lg" onclick="location.href = '/sections/addSection';">
+                    <!--<i class="material-icons">home</i>-->
+                    <span>නව අංශයක් එකතු කිරීමට </span>
                 </button>
             </div>
         </div>
         <div class="row">
 
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <a href="subSections/">
-                <div class="info-box-4 hover-expand-effect">
-                    <div class="icon">
+            {{#each sections}}
 
-                        <i class="material-icons col-purple">account_balance</i>
-                    </div>
-                    <div class="content">
-                        <div class="number">ප්‍රධාන කාර්යාල</div>
-                        <div class="text">A </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <a href="sections/{{this.section_name}}/{{this.section_id}}">
+                            <div class="info-box-4 hover-expand-effect">
+                                <div class="icon">
 
+                                    <i class="material-icons col-purple">account_balance</i>
+                                </div>
+                                <div class="content">
+                                    <div class="number">{{this.section_name}}</div>
+                                    <div class="text">{{this.section_id}}</div>
+
+                                </div>
+                            </div></a>
                     </div>
-                </div></a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box-4 hover-expand-effect">
-                    <div class="icon">
-                        <i class="material-icons col-deep-purple">account_balance</i>
-                    </div>
-                    <div class="content">
-                        <div class="number">උප කාර්යාල</div>
-                        <div class="text">B</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box-4 hover-expand-effect">
-                    <div class="icon">
-                        <i class="material-icons col-cyan">account_balance</i>
-                    </div>
-                    <div class="content">
-                        <div class="number">පුස්තකාල</div>
-                        <div class="text">C</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box-4 hover-expand-effect">
-                    <div class="icon">
-                        <i class="material-icons col-light-green">account_balance</i>
-                    </div>
-                    <div class="content">
-                        <div class="number">පෙර පාසල්</div>
-                        <div class="text">D</div>
-                    </div>
-                </div>
-            </div>
+            {{/each}}
         </div>
-        <!-- #END# Counter Examples -->
-        <!-- Hover Zoom Effect -->
-
-        <div class="row">
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box-4 hover-expand-effect">
-                    <div class="icon">
-                        <i class="material-icons col-teal">account_balance</i>
-                    </div>
-                    <div class="content">
-                        <div class="number">ආයුර්වේද</div>
-                        <div class="text">E</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box-4 hover-expand-effect">
-                    <div class="icon">
-                        <i class="material-icons col-teal">account_balance</i>
-                    </div>
-                    <div class="content">
-                        <div class="number">අංගන</div>
-                        <div class="text">F</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box-4 hover-expand-effect">
-                    <div class="icon">
-                        <i class="material-icons col-light-green">account_balance</i>
-                    </div>
-                    <div class="content">
-                        <div class="number">මධ්‍යස්ථාන</div>
-                        <div class="text">G</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <a href="pages/maps/google.html">
-                <div class="info-box-4 hover-expand-effect" >
-
-                    <div class="icon">
-                        <i class="material-icons col-light-green" >account_balance</i>
-                    </div>
-                    <div class="content">
-                        <div class="number">ආදාහනාගාර</div>
-                        <div class="text">H</div>
-                    </div>
-                </div></a>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box-4 hover-expand-effect">
-                    <div class="icon">
-                        <i class="material-icons col-teal">add_shopping_cart</i>
-                    </div>
-                    <div class="content">
-                        <div class="number">සතිපොල</div>
-                        <div class="text">I</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box-4 hover-expand-effect">
-                    <div class="icon">
-                        <i class="material-icons col-green">add_shopping_cart</i>
-                    </div>
-                    <div class="content">
-                        <div class="number">පොදු වෙළෙඳපොළ</div>
-                        <div class="text">J</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box-4 hover-expand-effect">
-                    <div class="icon">
-                        <i class="material-icons col-light-green">account_balance</i>
-                    </div>
-                    <div class="content">
-                        <div class="number">පොදු වැසිකිලි</div>
-                        <div class="text">K</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box-4 hover-expand-effect">
-                    <div class="icon">
-                        <i class="material-icons col-lime">brightness_low</i>
-                    </div>
-                    <div class="content">
-                        <div class="number">Main Officess</div>
-                        <div class="text">K  Count - 22</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- #END# Hover Expand Effect -->
-
     </div>
 </section>

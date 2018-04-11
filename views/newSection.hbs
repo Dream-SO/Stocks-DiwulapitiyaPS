@@ -1,7 +1,14 @@
 <section class="content">
     <div class="container-fluid">
+
+        <div class="body">
+            <ol class="breadcrumb breadcrumb-col-pink align-right">
+                <li><a href="/"><i class="material-icons">home</i> ප්‍රධාන මෙනුව - අංශයන්</a></li>
+                <li class="active"><i class="material-icons">library_books</i> New Section</li>
+            </ol>
+        </div>
         <div class="block-header">
-            <h2>YOU CAN ADD A NEW SECTION BY FILLING THE BELOW FORM</h2>
+
         </div>
 
         <!-- Vertical Layout -->
@@ -10,7 +17,7 @@
                 <div class="card">
                     <div class="header">
                         <h2>
-                            New Section Form
+                            නව ප්‍රධාන අංශයක් එකතු කිරීමෙ පෝරමය
                         </h2>
                         <ul class="header-dropdown m-r--5">
                             <li class="dropdown">
@@ -27,16 +34,17 @@
                     </div>
                     <div class="body">
                         <form method="POST" action="/sections/addSection">
-                            <label for="sectionId">Section ID</label>
+                            <label for="sectionId">නව අංශයේ කේතය</label>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input type="text" name="sectionId" id="sectionId" class="form-control"  >
+                                    <!--<input type="text" name="sectionId" id="sectionId" class="form-control" >-->
+                                    <input type="text" name="sectionId" id="sectionId" class="form-control" value="{{section_id}}" required readonly>
                                 </div>
                             </div>
-                            <label for="sectionName">Section name</label>
+                            <label for="sectionName">නව අංශයේ නම </label>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input type="text" id="sectionName" name="sectionName" class="form-control" placeholder="Enter the name of the section" required>
+                                    <input type="text" id="sectionName" name="sectionName" class="form-control" placeholder="" required>
                                 </div>
                             </div>
 
@@ -48,7 +56,38 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            දැනට පවතින අංශයන්
+                        </h2>
+                        <ul class="header-dropdown m-r--5">
+                            <li class="dropdown">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="material-icons">more_vert</i>
+                                </a>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="javascript:void(0);">Action</a></li>
+                                    <li><a href="javascript:void(0);">Another action</a></li>
+                                    <li><a href="javascript:void(0);">Something else here</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="body">
+                        <div class="list-group">
+                        {{#each sections}}
+                            <button type="button" onclick="location.href = '/sections/{{this.section_name}}/{{this.section_id}}'" class="list-group-item">{{this.section_id}} &nbsp;&nbsp;  {{this.section_name}}</button>
+                        {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+
         <!-- #END# Vertical Layout -->
     </div>
 </section>

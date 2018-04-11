@@ -1,25 +1,19 @@
-var mongoose = require('mongoose');
+var conncetion = require('../connection');
 
-//Section Schema
-var SectionSchema = mongoose.Schema({
-    _id:{
-        type:String
-    },
-    sectionName:{
-        type:String
-    },
-    subSections:{
-        type:Array
-    },
-    createdAt:{
-        type:Date
-    }
-});
+var row;
 
-var Section = module.exports = mongoose.model('section',SectionSchema);
+function getAll(){
+    conncetion.query('SELECT * FROM section', function (err, rows) {
+        if (err) {
+            row = []
+            return err;
+        }else{
+            return rows;
+        }
 
-module.exports.createSection = function (newSection,callback) {
-    newSection.save(callback);
+    })
 
 }
 
+
+module.exports = getAll();
