@@ -1,0 +1,240 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+<!-- (Optional) Latest compiled and minified JavaScript translation files -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
+
+<section class="content">
+    <div class="container-fluid">
+        <ol class="breadcrumb breadcrumb-col-cyan">
+            <li><a href="javascript:void(0);"><i class="material-icons">home</i> මුල්පිටුව</a></li>
+            <li><a href="javascript:void(0);"><i class="material-icons">library_books</i> කාණ්ඩය</a></li>
+            <li class="active"><i class="material-icons">archive</i>වානේ</li>
+        </ol>
+
+        <!--<div class="block-header">
+            <h2>
+                වානේ කාණ්ඩය
+            </h2>
+        </div>-->
+        <div class="row clearfix">
+            <!-- Basic Examples -->
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            වානේ කාණ්ඩය
+                        </h2>
+                    </div>
+                    <div class="body">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <button class="btn bg-cyan waves-effect m-b-15" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                    <i class="material-icons">add</i> අලුත් වර්ගයක් එකතු කරන්න
+                                </button>
+                                <div class="collapse" id="collapseExample">
+                                    <div class="well">
+                                        <div class="row clearfix">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="card">
+                                                    <div class="body">
+                                                        <form id="form_validation" action="items/add_batch/" method="POST">
+                                                            <div class="form-group form-float">
+                                                                <div class="form-line">
+                                                                    <input type="text" class="form-control" name="batch_type" required>
+                                                                    <label class="form-label">කාණ්ඩ වර්ගය පුරවන්න</label>
+                                                                </div>
+                                                            </div>
+                                                            <button class="btn btn-success waves-effect" type="submit">SUBMIT</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row clearfix">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="row clearfix">
+                                            <div class="col-sm-6">
+                                                <select class="form-control show-tick">
+                                                    <option value="">-- දැනට පවතින වර්ග --</option>
+                                                    <option value="10">10</option>
+                                                    <option value="20">20</option>
+                                                    <option value="30">30</option>
+                                                    <option value="40">40</option>
+                                                    <option value="50">50</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li class="list-group-item">
+                                <button class="btn bg-cyan waves-effect m-b-15" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
+                                <i class="material-icons">add</i>අලුත් උප වර්ගයක් එකතු කරන්න
+                                </button>
+                                <div class="collapse" id="collapseExample1">
+                                    <div class="well">
+                                        <div class="row clearfix">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="card">
+                                                    <div class="body">
+                                                        <form id="form_validation" action="items/add_batch/" method="POST">
+                                                            <div class="form-group form-float">
+                                                                <div class="form-line">
+                                                                    <input type="text" class="form-control" name="batch_type" required>
+                                                                    <label class="form-label">අලුත් උප වර්ගයක් එකතු කරන්න</label>
+                                                                </div>
+                                                            </div>
+                                                            <button class="btn btn-success waves-effect" type="submit">SUBMIT</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row clearfix">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="row clearfix">
+                                            <div class="col-sm-6">
+                                                <select class="form-control show-tick">
+                                                    <option value="">-- දැනට පවතින උපවර්ග --</option>
+                                                    <option value="10">10</option>
+                                                    <option value="20">20</option>
+                                                    <option value="30">30</option>
+                                                    <option value="40">40</option>
+                                                    <option value="50">50</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li class="list-group-item"><button class="btn bg-cyan waves-effect m-b-15" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+                                <i class="material-icons">add</i>අලුත් සoයුතයක් එකතු කරන්න
+                            </button>
+                                <div class="collapse" id="collapseExample2">
+                                    <div class="well">
+                                        <div class="row clearfix">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="card">
+                                                    <div class="body">
+                                                        <form id="form_validation" action="items/add_batch/" method="POST">
+                                                            <div class="form-group form-float">
+                                                                <div class="form-line">
+                                                                    <input type="text" class="form-control" name="batch_type" required>
+                                                                    <label class="form-label">අලුත් සoයුතයක් එකතු කරන්න</label>
+                                                                </div>
+                                                            </div>
+                                                            <button class="btn btn-success waves-effect" type="submit">SUBMIT</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row clearfix">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="row clearfix">
+                                            <div class="col-sm-6">
+                                                <select class="form-control show-tick">
+                                                    <option value="">-- දැනට පවතින සoයුත --</option>
+                                                    <option value="10">10</option>
+                                                    <option value="20">20</option>
+                                                    <option value="30">30</option>
+                                                    <option value="40">40</option>
+                                                    <option value="50">50</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li class="list-group-item">
+                                <form class="form-horizontal">
+                                    <div class="row clearfix">
+                                        <div class="col-lg-7 col-md-7 col-sm-6 col-xs-7">
+                                            <label for="email_address_2">දැනට පවතින ප්‍රමාණය</label>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-5 form-control-label">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" id="email_address_2" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Basic Examples -->
+            <!-- Badges -->
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            සාරාoශය
+                        </h2>
+                    </div>
+                    <div class="body">
+                        <form id="form_validation" action="items/add_batch/" method="POST">
+
+                            <div class="body table-responsive">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                        <th>අoකය</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>කාණ්ඩය</td>
+                                        <td><input type="text" class="form-control" placeholder="test1" disabled />
+                                        </td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>වර්ගය</td>
+                                        <td><input type="text" class="form-control" placeholder="test2" disabled />
+                                        </td>
+                                        <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                        <td>උපවර්ගය</td>
+                                        <td><input type="text" class="form-control" placeholder="test3" disabled />
+                                        </td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                    <tr>
+                                        <td>සoයුතය</td>
+                                        <td style="width: auto;"><input type="text" class="form-control" placeholder="test4" disabled /></td>
+                                        <td>@lajelly</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <button type="button" class="btn btn-success waves-effect pull-right"><i class="material-icons">save</i> ගොනු ගත කරන්න</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Badges -->
+        </div>
+
+    </div>
+</section>

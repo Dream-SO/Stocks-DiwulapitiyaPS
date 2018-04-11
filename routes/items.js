@@ -16,6 +16,11 @@ router.get('/', function(req, res, next) {
     res.render('items/all_matiriels', { title: 'Express' });
 });
 
+//getting stock add page
+router.get('/stock_page', function(req, res, next) {
+    res.render('items/items_flowadd', { title: 'Express' });
+});
+
 
 //create my sql
 const mysql=require('mysql');
@@ -64,4 +69,18 @@ router.post('/add_batch',function (req,res,next) {
 
    });
 });
+
+// add items
+
+
+
+
+
+
+
+
+
+
+
+
 module.exports = router;
