@@ -36,7 +36,7 @@ var connection = require('../connection');
 //
 // });
 
-router.get('/addSubsection/:section_id',function (req,res,next) {
+router.get('/addSubsection/:section_name/:section_id',function (req,res,next) {
 
     if(req.params.section_id){
         connection.query("SELECT MAX(subSection_id) as subSection_id FROM subsection  WHERE subSection_id LIKE '" + req.params.section_id + "%' ; SELECT * FROM subSection WHERE subSection_id LIKE '" + req.params.section_id + "%'",[1,2], function (err, row) {
@@ -51,14 +51,14 @@ router.get('/addSubsection/:section_id',function (req,res,next) {
                     var new_second_letter = String.fromCharCode(ascii+1);
                     var new_subsection_id = current_subSection.charAt(0)+new_second_letter;
                     console.log(new_subsection_id);
-                    res.render('newSubsection', {subSection_id:new_subsection_id , subSections:row[1]});
+                    res.render('newSubsection', {subSection_id:new_subsection_id , subSections:row[1], sectionName:req.params.section_name});
                 }else{
                     console.log("No subsections");
                     var section_id = req.params.section_id;
                     var start_second_letter = 'A';
                     var new_subsection_id = section_id+start_second_letter;
                     console.log(new_subsection_id);
-                    res.render('newSubsection', {subSection_id:new_subsection_id});
+                    res.render('newSubsection', {subSection_id:new_subsection_id ,  sectionName:req.params.section_name});
                 }
             }
         });

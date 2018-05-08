@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <title>Welcome To | Bootstrap Based Admin Template - Material Design</title>
+  <title>Diwulapitiya Pradeshiya Sabha - Stock Management & Inventory </title>
   <!-- Favicon-->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -13,13 +13,22 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
-  <!-- Bootstrap Core Css -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css"/>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
+
+
+    <!-- Bootstrap Core Css -->
   <link href="/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- Bootstrap Tagsinput Css -->
     <link href="/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
 
-  <!-- Waves Effect Css -->
+    <!-- JQuery DataTable Css -->
+    <link href="/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
+
+
+    <!-- Waves Effect Css -->
   <link href="/plugins/node-waves/waves.css" rel="stylesheet" />
 
   <!-- Animation Css -->
@@ -33,6 +42,15 @@
 
   <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
   <link href="/css/themes/all-themes.css" rel="stylesheet" />
+
+    // First try loading jQuery from Google's CDN
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    // Fall back to a local copy of jQuery if the CDN fails
+    <script>
+        window.jQuery || document.write('<script src="http://mysite.com/jquery.min.js"><\/script>')
+    </script>
+
 </head>
 
 <body class="theme-red">
@@ -104,6 +122,17 @@
 <script src="/plugins/flot-charts/jquery.flot.categories.js"></script>
 <script src="/plugins/flot-charts/jquery.flot.time.js"></script>
 
+<!-- Jquery DataTable Plugin Js -->
+<script src="/plugins/jquery-datatable/jquery.dataTables.js"></script>
+<script src="/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+<script src="/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
+<script src="/plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
+<script src="/plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
+<script src="/plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
+<script src="/plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
+<script src="/plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
+<script src="/plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
+
 <!-- Sparkline Chart Plugin Js -->
 <script src="/plugins/jquery-sparkline/jquery.sparkline.js"></script>
 
@@ -113,6 +142,10 @@
 <!-- Custom Js -->
 <script src="/js/admin.js"></script>
 <script src="/js/pages/index.js"></script>
+<script src="/js/pages/tables/jquery-datatable.js"></script>
+
+<!-- Select Plugin Js -->
+<script src="/plugins/bootstrap-select/js/bootstrap-select.js"></script>
 
 <!-- Demo Js -->
 <script src="/js/demo.js"></script>
