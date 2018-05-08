@@ -9,11 +9,39 @@ var mysql = require('mysql') //sql connection
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+
+var itemsRouter = require('./routes/items');
+
 var sectionsRouter = require('./routes/sections');
 var subSectionsRouter = require('./routes/subSections');
+var getItemsStats = require('./routes/getItemsStats');
+
+
+/*
+//create my sql
+const mysql=require('mysql');
+//create connection
+var db = mysql.createConnection({
+    host:'localhost',
+    user:'root',
+    password:'',
+    database:'stock'
+});
+
+//connect
+db.connect(function(err){
+    if(err){
+        throw err;
+    }
+    console.log('mysql connected.');
+
+});
+// gobal siteTitle and base url
+const  siteTitle = "Stock";
+const  baseURL = "http://localhost/3000";
+*/
 
 var app = express();
-
 // view engine setup
 app.engine('.hbs', expressHbs({defaultLayout: 'main' , extname: '.hbs'}));
 app.set('view engine', '.hbs');
@@ -26,8 +54,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+app.use('/items', itemsRouter);
 app.use('/sections',sectionsRouter);
 app.use('/subSections',subSectionsRouter);
+app.use('/getItemsStats',getItemsStats);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -44,6 +75,10 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
+// Set Port
+app.set('port', (process.env.PORT || 4000));
 
 
 
